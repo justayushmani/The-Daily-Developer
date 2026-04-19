@@ -8,7 +8,7 @@ function ContactForm() {
 
   return (
     <section id="letters" className="flex-1">
-      <h2 className="text-3xl font-black uppercase tracking-tight mb-1">
+      <h2 className="text-xl sm:text-3xl font-black uppercase tracking-tight mb-1">
         Letters to the Editor
       </h2>
       <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">
@@ -73,13 +73,13 @@ function WantedPoster() {
       <p className="text-xs font-black uppercase tracking-widest border-b border-black pb-1 mb-2">
         Wanted
       </p>
-      <p className="text-2xl font-black uppercase leading-tight mb-3">
+      <p className="text-lg sm:text-2xl font-black uppercase leading-tight mb-3">
         Ayush Mani Tiwari
       </p>
 
       <div className="border border-black mb-3 overflow-hidden">
         <img
-          src="https://placehold.co/200x200/1a1a1a/ffffff?text=WANTED"
+          src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2021/08/Miles-Morales-2021-Annual-Preview-Header-2.jpg?w=1200&h=675&fit=crop"
           alt="Wanted Poster"
           className="w-full object-cover grayscale"
         />

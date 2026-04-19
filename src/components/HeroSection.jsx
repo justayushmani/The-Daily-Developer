@@ -5,7 +5,7 @@ export default function HeroSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         {/* Headline */}
         <div className="border-r-0 md:border-r-2 border-black pr-0 md:pr-4">
-          <h2 className="text-5xl md:text-6xl font-black uppercase leading-none tracking-tight">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase leading-none tracking-tight">
             Ayush Mani Tiwari{' '}
             <span className="italic text-red-600">Strikes Again:</span>{' '}
             The Full-Stack Phenom!
@@ -17,7 +17,7 @@ export default function HeroSection() {
           {/* Portrait */}
           <div className="border border-black">
             <img
-              src="https://i.pinimg.com/736x/a2/62/b8/a262b8f0cce9ce4bb3134ea0e3d79370.jpg"
+              src="https://i.pinimg.com/736x/00/53/1f/00531f63d2b6bdb35d8fa75c143e3d58.jpg"
               alt="Ayush Mani Tiwari"
               className="w-full object-cover grayscale"
             />

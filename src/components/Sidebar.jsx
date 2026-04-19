@@ -1,28 +1,16 @@
 
 
-import { User, Briefcase, Users, Send } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { User, Users, Send, Instagram, Linkedin, Github, Twitter } from 'lucide-react';
 
 export default function Sidebar() {
-  const navigate = useNavigate();
-
-  // Handlers for navigation and download
-  const handleItemClick = (label) => {
-    if (label === 'CAPTURES') {
-      navigate('/capture');
-    }
-    // Add more navigation if needed
-  };
-
-  const handleResumeClick = () => {
-    window.open('/resume.pdf', '_blank');
-  };
-
   const wantedItems = [
     { icon: <User size={14} />, label: 'Wanted', onClick: null },
-    { icon: <Briefcase size={14} />, label: 'CAPTURES', onClick: () => handleItemClick('CAPTURES') },
     { icon: <Users size={14} />, label: 'Collaborate', onClick: null },
-    { icon: <Send size={14} />, label: 'Resume', onClick: handleResumeClick },
+    { icon: <Instagram size={14} />, label: 'Instagram', onClick: () => window.open('https://www.instagram.com/ayush.__.0708?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank') },
+    { icon: <Linkedin size={14} />, label: 'LinkedIn', onClick: () => window.open('https://www.linkedin.com/in/ayush-mani-tiwari-b6369b344/', '_blank') },
+    { icon: <Github size={14} />, label: 'GitHub', onClick: () => window.open('https://github.com/justayushmani', '_blank') },
+    { icon: <Twitter size={14} />, label: 'X (Twitter)', onClick: () => window.open('https://x.com/AyushmaniTiwa10', '_blank') },
+     { icon: <Send size={14} />, label: 'Resume', onClick: null },
   ];
 
   return (
@@ -37,14 +25,26 @@ export default function Sidebar() {
         </div>
         <ul className="divide-y divide-black">
           {wantedItems.map(({ icon, label, onClick }) => (
-            <li
-              key={label}
-              className="flex items-center gap-2 px-3 py-2 text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white cursor-pointer transition-colors"
-              onClick={onClick || undefined}
-            >
-              {icon}
-              {label}
-            </li>
+            label === 'Resume' ? (
+              <a
+                key={label}
+                href="/resume.pdf"
+                download="Ayush_Resume.pdf"
+                className="flex items-center gap-2 px-3 py-2 text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white cursor-pointer transition-colors no-underline"
+              >
+                {icon}
+                {label}
+              </a>
+            ) : (
+              <li
+                key={label}
+                className="flex items-center gap-2 px-3 py-2 text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white cursor-pointer transition-colors"
+                onClick={onClick || undefined}
+              >
+                {icon}
+                {label}
+              </li>
+            )
           ))}
         </ul>
       </div>

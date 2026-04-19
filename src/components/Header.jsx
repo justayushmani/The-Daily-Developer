@@ -40,6 +40,41 @@ function NavBar() {
   );
 }
 
+function LiveDateTime() {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatDate = (date) => {
+    return date.toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
+  const formatTime = (date) => {
+    return date.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    });
+  };
+
+  return (
+    <span>
+      {formatDate(currentTime)} | {formatTime(currentTime)}
+    </span>
+  );
+}
+
 export default function Header() {
   return (
     <header>
@@ -47,15 +82,15 @@ export default function Header() {
 
       {/* Masthead */}
       <div className="border-b-4 border-black text-center py-4 px-4">
-        <h1 className="text-5xl md:text-7xl font-black tracking-tight uppercase">
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight uppercase">
           The Daily Developer
         </h1>
-        <div className="flex justify-between items-center text-xs mt-2 border-t border-black pt-2">
+        <div className="flex flex-col sm:flex-row justify-between items-center text-xs mt-2 border-t border-black pt-2 gap-2">
           <span>Vol. LXXV — No. 128</span>
           <span className="uppercase tracking-widest font-bold">
             Late Edition | Ghaziabad & Gorakhpur | ₹10
           </span>
-          <span>Tuesday, May 13, 2025</span>
+          <LiveDateTime />
         </div>
       </div>
 

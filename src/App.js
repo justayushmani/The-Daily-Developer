@@ -3,6 +3,7 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import Sidebar from './components/Sidebar';
 import ClassifiedsSection from './components/ClassifiedsSection';
+import GitHubHeatmapSection from './components/GitHubHeatmapSection';
 import LocalHeadlines from './components/LocalHeadlines';
 import LettersAndWanted from './components/LettersAndWanted';
 import Footer from './components/Footer';
@@ -21,16 +22,14 @@ export default function App() {
             <div className="flex-1 min-w-0">
               <Routes>
                 <Route
-                  path="/capture"
-                  element={<Capture />}
-                />
-                <Route
                   path="/"
                   element={
                     <>
                       <HeroSection />
                       <ClassifiedsSection />
+                      <GitHubHeatmapSection username="justayushmani" />
                       <LocalHeadlines />
+                      <Capture />
                       <LettersAndWanted />
                     </>
                   }

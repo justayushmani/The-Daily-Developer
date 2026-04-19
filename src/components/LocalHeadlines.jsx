@@ -50,7 +50,7 @@ function NewsCard({ image, tag, title, body, link }) {
 export default function LocalHeadlines() {
   return (
     <section id="local-news" className="border-b-2 border-black pb-6 mb-6">
-      <h2 className="text-4xl font-black uppercase text-center border-b-2 border-black pb-2 mb-6 tracking-tight">
+      <h2 className="text-2xl sm:text-4xl font-black uppercase text-center border-b-2 border-black pb-2 mb-6 tracking-tight">
         Local Headlines
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
