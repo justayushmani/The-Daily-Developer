@@ -21,9 +21,9 @@ export default function Capture() {
 			<p className="text-sm text-gray-700 mb-4">
 				A visual chronicle of moments captured through the lens, showcasing creativity and perspective in photography.
 			</p>
-			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+			<div className="flex flex-row overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{sampleImages.map((src, idx) => (
-					<div key={src} className="border-2 border-black rounded-lg overflow-hidden bg-white shadow-md flex items-center justify-center aspect-square">
+					<div key={src} className="border-2 border-black rounded-lg overflow-hidden bg-white shadow-md flex items-center justify-center aspect-square min-w-64">
 						<img
 							src={src}
 							alt={`Capture ${idx + 1}`}

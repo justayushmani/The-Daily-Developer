@@ -21,7 +21,7 @@ export default function GitHubHeatmapSection({ username = "justayushmani" }) {
         <img
           src={`https://ghchart.rshah.org/${username}`}
           alt={`${username} GitHub contribution heatmap`}
-          className="w-full h-auto"
+          className="w-full h-auto scale-110 md:scale-100"
         />
       </div>
     </section>
