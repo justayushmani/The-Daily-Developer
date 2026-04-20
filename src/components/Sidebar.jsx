@@ -1,15 +1,15 @@
 
 
-import { User, Users, Send, Instagram, Linkedin, Github, Twitter } from 'lucide-react';
+import { User, Users, Send, Mail, Code, ExternalLink } from 'lucide-react';
 
 export default function Sidebar() {
   const wantedItems = [
     { icon: <User size={14} />, label: 'Wanted', onClick: null },
     { icon: <Users size={14} />, label: 'Collaborate', onClick: null },
-    { icon: <Instagram size={14} />, label: 'Instagram', onClick: () => window.open('https://www.instagram.com/ayush.__.0708?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank') },
-    { icon: <Linkedin size={14} />, label: 'LinkedIn', onClick: () => window.open('https://www.linkedin.com/in/ayush-mani-tiwari-b6369b344/', '_blank') },
-    { icon: <Github size={14} />, label: 'GitHub', onClick: () => window.open('https://github.com/justayushmani', '_blank') },
-    { icon: <Twitter size={14} />, label: 'X (Twitter)', onClick: () => window.open('https://x.com/AyushmaniTiwa10', '_blank') },
+    { icon: <Mail size={14} />, label: 'Instagram', onClick: () => window.open('https://www.instagram.com/ayush.__.0708?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank') },
+    { icon: <ExternalLink size={14} />, label: 'LinkedIn', onClick: () => window.open('https://www.linkedin.com/in/ayush-mani-tiwari-b6369b344/', '_blank') },
+    { icon: <Code size={14} />, label: 'GitHub', onClick: () => window.open('https://github.com/justayushmani', '_blank') },
+    { icon: <ExternalLink size={14} />, label: 'X (Twitter)', onClick: () => window.open('https://x.com/AyushmaniTiwa10', '_blank') },
      { icon: <Send size={14} />, label: 'Resume', onClick: null },
   ];
 

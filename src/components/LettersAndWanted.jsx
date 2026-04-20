@@ -90,11 +90,11 @@ function WantedPoster() {
       </p>
 
       <div className="flex justify-center gap-4 text-xs font-black uppercase tracking-widest">
-        <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-red-600 hover:underline">
+        <a href="https://github.com/justayushmani" target="_blank" rel="noreferrer" className="hover:text-red-600 hover:underline">
           GitHub Repository
         </a>
         <span>·</span>
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-red-600 hover:underline">
+        <a href="https://www.linkedin.com/in/ayush-mani-tiwari-b6369b344/" target="_blank" rel="noreferrer" className="hover:text-red-600 hover:underline">
           LinkedIn Dossier
         </a>
       </div>
