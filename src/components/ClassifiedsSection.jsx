@@ -31,7 +31,7 @@ export default function ClassifiedsSection() {
           Section B — Skills & Trades
         </span>
       </div>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 border-t-2 border-l-2 border-black">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border-t-2 border-l-2 border-black">
         {skills.map((skill) => (
           <div key={skill.name} className="border-b-2 border-r-2 border-black">
             <SkillCell {...skill} />

@@ -6,7 +6,7 @@ export default function Footer() {
         <div>
           <p className="font-black text-lg uppercase tracking-tight">The Daily Developer</p>
           <p className="text-xs text-gray-400 mt-1 max-w-xs leading-relaxed">
-            © 1998–2024 The Daily Developer. All rights reserved. Member of the Associated Press.
+            © 2006–2026 The Daily Developer. All rights reserved. Member of the Associated Press.
             Designed & Deployed by Ayush Mani Tiwari.
           </p>
         </div>

@@ -23,8 +23,8 @@ function Ticker() {
 function NavBar() {
   const links = ['Editorial', 'Local News', 'Classifieds', 'Letters', 'Archive'];
   return (
-    <nav className="border-b border-black py-2">
-      <ul className="flex justify-center gap-6 text-xs tracking-widest uppercase">
+    <nav className="border-b border-black py-3">
+      <ul className="flex flex-wrap justify-center gap-3 text-[0.65rem] sm:text-xs tracking-widest uppercase">
         {links.map((link) => (
           <li key={link}>
             <a

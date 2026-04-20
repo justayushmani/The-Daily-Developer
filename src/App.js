@@ -16,8 +16,8 @@ export default function App() {
     <Router>
       <div className="bg-white text-black font-serif min-h-screen">
         <Header />
-        <main className="max-w-6xl mx-auto px-4 py-6">
-          <div className="flex flex-col lg:flex-row gap-6">
+        <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col lg:flex-row gap-8">
             {/* Left: Main content */}
             <div className="flex-1 min-w-0">
               <Routes>
@@ -37,7 +37,7 @@ export default function App() {
               </Routes>
             </div>
             {/* Right: Sidebar */}
-            <aside className="w-full lg:w-56 shrink-0">
+            <aside className="w-full lg:w-72 shrink-0 lg:sticky lg:top-6">
               <Sidebar />
             </aside>
           </div>

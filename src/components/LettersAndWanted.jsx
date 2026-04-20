@@ -69,7 +69,7 @@ function ContactForm() {
 
 function WantedPoster() {
   return (
-    <aside className="border-2 border-black p-4 text-center w-full md:w-64 shrink-0 self-start">
+    <aside className="border-2 border-black p-4 text-center w-full max-w-md shrink-0 self-start mx-auto md:mx-0">
       <p className="text-xs font-black uppercase tracking-widest border-b border-black pb-1 mb-2">
         Wanted
       </p>
