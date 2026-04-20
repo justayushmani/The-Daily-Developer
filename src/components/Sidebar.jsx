@@ -1,6 +1,7 @@
 
 
 import { User, Users, Send, Mail, Code, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Sidebar() {
   const wantedItems = [
@@ -26,24 +27,30 @@ export default function Sidebar() {
         <ul className="divide-y divide-black">
           {wantedItems.map(({ icon, label, onClick }) => (
             label === 'Resume' ? (
-              <a
+              <motion.a
                 key={label}
                 href="/resume.pdf"
                 download="Ayush_Resume.pdf"
                 className="flex items-center gap-2 px-3 py-2 text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white cursor-pointer transition-colors no-underline"
+                whileHover={{ scale: 1.05, backgroundColor: "#000", color: "#fff" }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 {icon}
                 {label}
-              </a>
+              </motion.a>
             ) : (
-              <li
+              <motion.li
                 key={label}
                 className="flex items-center gap-2 px-3 py-2 text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white cursor-pointer transition-colors"
                 onClick={onClick || undefined}
+                whileHover={{ scale: 1.05, backgroundColor: "#000", color: "#fff" }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 {icon}
                 {label}
-              </li>
+              </motion.li>
             )
           ))}
         </ul>
