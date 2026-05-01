@@ -30,11 +30,10 @@ export default function HeroSection() {
           <blockquote className="border border-black p-4 bg-gray-50">
             <span className="text-red-600 text-4xl font-black leading-none">"</span>
             <p className="text-sm md:text-base font-bold italic leading-snug mt-1">
-              "With great power comes great responsibility... and merge conflicts
-              that keep you up until 3:00 AM."
+              "I don't just write code; I architect experiences that feel alive. If it isn't exceptional, it's not finished."
             </p>
             <footer className="text-xs mt-3 font-bold uppercase tracking-wide">
-              — Ayush Mani Tiwari, 2024
+              — Ayush Mani Tiwari
             </footer>
           </blockquote>
         </div>
@@ -45,25 +44,17 @@ export default function HeroSection() {
         <div className="space-y-3">
           <p>
             <span className="font-black text-lg uppercase float-left mr-2 leading-none mt-1">G</span>
-            HAZIABAD — Reports are surfacing from the hallowed halls of ABES Engineering College
-            regarding a rising figure in the digital landscape. Ayush Mani Tiwari, a computer
-            science engineering student, has been observed weaving complex architectural patterns
-            into web applications with a dexterity that has left both peers and faculty in a state
-            of professional awe.
+            HAZIABAD — Ayush Mani Tiwari is redefining the digital landscape. With relentless precision, he bridges the gap between complex backend logic and stunning, user-centric interfaces.
           </p>
-          <p>
-            From the intricate logic of Data Structures and Algorithms to the visual finesse of
-            modern front-end frameworks, Tiwari's methodology is described as "relentless." "He
-            doesn't just write code," one anonymous collaborator stated. "He architects experiences
-            that feel as tactile as newsprint."
-          </p>
+          <ul className="list-disc list-inside font-bold mt-2 space-y-1">
+            <li>Full-Stack Architecture</li>
+            <li>Advanced AI & Machine Learning</li>
+            <li>Scalable Data Structures</li>
+          </ul>
         </div>
         <div className="space-y-3">
           <p>
-            His latest deployments suggest a deep integration of AI/ML models into functional,
-            user-centric tools, bridging the gap between theoretical computation and practical
-            utility. As the industry watches, the question remains: where will this digital phenom
-            strike next?
+            From deploying high-performance applications to integrating intelligent systems, Tiwari's work isn't just functional—it's visionary. The industry is watching; the next digital breakthrough is already in motion.
           </p>
         </div>
       </div>

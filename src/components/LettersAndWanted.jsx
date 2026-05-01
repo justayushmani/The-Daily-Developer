@@ -2,9 +2,41 @@ import { useState } from 'react';
 
 function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState(''); // '', 'loading', 'success', 'error'
 
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('loading');
+    
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/ayushmanitiwari931@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          _subject: `New portfolio inquiry from ${form.name}`
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setForm({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
+    }
+  };
 
   return (
     <section id="letters" className="flex-1">
@@ -12,57 +44,74 @@ function ContactForm() {
         Letters to the Editor
       </h2>
       <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">
-        Opinion & Public Correspondence
+        Direct Correspondence
       </p>
 
-      <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
-        <div>
-          <label className="block text-xs font-bold uppercase tracking-widest mb-1">
-            Your Name or Pseudonym:
-          </label>
-          <input
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            placeholder="John Doe, Senior Engineer"
-            className="w-full border border-black px-3 py-2 text-sm font-serif focus:outline-none focus:ring-2 focus:ring-black"
-          />
+      {status === 'success' ? (
+        <div className="border border-green-600 bg-green-50 p-4 text-green-800">
+          <p className="font-bold">Telegram Sent!</p>
+          <p className="text-sm">Your message has been dispatched successfully. Note: If this is your first time using this form, please check your inbox for an activation email from FormSubmit.</p>
+          <button onClick={() => setStatus('')} className="mt-2 text-xs font-bold underline">Send another</button>
         </div>
+      ) : (
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <div>
+            <label className="block text-xs font-bold uppercase tracking-widest mb-1">
+              Name:
+            </label>
+            <input
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              placeholder="John Doe"
+              required
+              className="w-full border border-black px-3 py-2 text-sm font-serif focus:outline-none focus:ring-2 focus:ring-black"
+            />
+          </div>
 
-        <div>
-          <label className="block text-xs font-bold uppercase tracking-widest mb-1">
-            Your Inquiry
-          </label>
-          <input
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder="dispatch@example.com"
-            className="w-full border border-black px-3 py-2 text-sm font-serif focus:outline-none focus:ring-2 focus:ring-black"
-          />
-        </div>
+          <div>
+            <label className="block text-xs font-bold uppercase tracking-widest mb-1">
+              Email:
+            </label>
+            <input
+              name="email"
+              type="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="john@example.com"
+              required
+              className="w-full border border-black px-3 py-2 text-sm font-serif focus:outline-none focus:ring-2 focus:ring-black"
+            />
+          </div>
 
-        <div>
-          <label className="block text-xs font-bold uppercase tracking-widest mb-1">
-            The Dispatch
-          </label>
-          <textarea
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            rows={5}
-            placeholder="Sir, I wish to inquire about your availability for..."
-            className="w-full border border-black px-3 py-2 text-sm font-serif focus:outline-none focus:ring-2 focus:ring-black resize-none"
-          />
-        </div>
+          <div>
+            <label className="block text-xs font-bold uppercase tracking-widest mb-1">
+              Message:
+            </label>
+            <textarea
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              rows={5}
+              placeholder="I wish to inquire about..."
+              required
+              className="w-full border border-black px-3 py-2 text-sm font-serif focus:outline-none focus:ring-2 focus:ring-black resize-none"
+            />
+          </div>
 
-        <button
-          type="submit"
-          className="bg-red-600 text-white font-black uppercase tracking-widest text-sm py-3 px-6 hover:bg-black transition-colors w-full sm:w-auto"
-        >
-          Send Telegram
-        </button>
-      </form>
+          {status === 'error' && (
+            <p className="text-red-600 text-sm font-bold">Failed to send. Please try again later.</p>
+          )}
+
+          <button
+            type="submit"
+            disabled={status === 'loading'}
+            className="bg-red-600 text-white font-black uppercase tracking-widest text-sm py-3 px-6 hover:bg-black transition-colors w-full sm:w-auto disabled:opacity-50"
+          >
+            {status === 'loading' ? 'Dispatching...' : 'Send Telegram'}
+          </button>
+        </form>
+      )}
     </section>
   );
 }

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
 const TICKER_ITEMS = [
-  'deploys bug-free code on the first try! (Sources dispute this claim)',
-  'BREAKING NEWS: CS Engineering student at ABES continues to redefine full-stack development',
-  `AI/ML integration reaches new milestone — Tiwari's deployment leaves peers speechless`,
+  'FLAWLESS EXECUTION: Bug-free deployments on the first try!',
+  'BREAKING: Full-stack architect redefines digital experiences.',
+  'INNOVATION: AI/ML integrations reach new milestones.',
 ];
 
 function Ticker() {

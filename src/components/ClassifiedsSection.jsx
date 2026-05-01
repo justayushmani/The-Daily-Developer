@@ -15,7 +15,7 @@ const skills = [
 
 function SkillCell({ name, category }) {
   return (
-    <div className="border border-black p-2 text-center">
+    <div className="border border-black p-3 sm:p-2 text-center min-w-[120px] sm:min-w-0 bg-white shrink-0">
       <p className="font-black text-sm uppercase tracking-wide">{name}</p>
       <p className="text-xs text-gray-500 uppercase tracking-widest">{category}</p>
     </div>
@@ -31,9 +31,11 @@ export default function ClassifiedsSection() {
           Section B — Skills & Trades
         </span>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border-t-2 border-l-2 border-black">
+      
+      {/* Container: Horizontal scroll on mobile, Grid on medium+ screens */}
+      <div className="flex flex-row overflow-x-auto snap-x snap-mandatory pb-4 sm:pb-0 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:border-t-2 sm:border-l-2 sm:border-black gap-4 sm:gap-0">
         {skills.map((skill) => (
-          <div key={skill.name} className="border-b-2 border-r-2 border-black">
+          <div key={skill.name} className="snap-start sm:border-b-2 sm:border-r-2 sm:border-black border-2 border-black sm:border-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-none">
             <SkillCell {...skill} />
           </div>
         ))}

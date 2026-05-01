@@ -1,27 +1,27 @@
 const headlines = [
   {
     id: 1,
-    image: 'https://placehold.co/400x200/111/fff?text=SkillSync',
+    image: '/SachAi.png',
     tag: 'MERN Stack',
-    title: 'SkillSync Promises to Connect Campus Coders!',
-    body: `In an effort reminiscent of assembling a digital Avengers initiative, SkillSync emerges as the primary platform for peer-to-peer technical exchange. Tiwari's platform facilitates complex project matching.`,
-    link: '#',
+    title: 'SachAI: Decoding Truth in Every Language!',
+    body: `A state-of-the-art verification engine designed for real-time fake news detection and cross-cultural information integrity.`,
+    link: 'https://github.com/justayushmani/Code-Orbit',
   },
   {
     id: 2,
     image: 'https://placehold.co/400x200/222/fff?text=SynMed',
     tag: 'AI / NextJS',
     title: 'Rural Healthcare Revolutionized by SynMed!',
-    body: `Dodging bullets like Neo in the Matrix, SynMed cuts through bureaucratic inefficiencies to deliver high-quality diagnostic tools to underserved areas. The AI-integrated healthcare system is making waves.`,
+    body: `An AI-integrated diagnostic system bringing high-quality healthcare to underserved areas.`,
     link: '#',
   },
   {
     id: 3,
-    image: 'https://placehold.co/400x200/333/fff?text=SpillTheTea',
+    image: '/Sipll.png',
     tag: 'Node / Socket.io',
     title: 'Spill the Tea Causes Campus Uproar!',
-    body: `Anonymity finds a home in Tiwari's latest social experiment. "Spill the Tea" has become the talk of the campus, allowing for uninhibited discourse through a secure, anonymous messaging gateway.`,
-    link: '#',
+    body: `A secure, anonymous messaging gateway allowing for uninhibited and real-time discourse.`,
+    link: 'https://github.com/justayushmani/Spill-The-Tea',
   },
 ];
 

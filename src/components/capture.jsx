@@ -18,8 +18,8 @@ export default function Capture() {
 					Section D — Gallery
 				</span>
 			</div>
-			<p className="text-sm text-gray-700 mb-4">
-				A visual chronicle of moments captured through the lens, showcasing creativity and perspective in photography.
+			<p className="text-sm text-gray-700 mb-4 font-bold">
+				A visual chronicle of moments captured through the lens.
 			</p>
 			<div className="flex flex-row overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{sampleImages.map((src, idx) => (
