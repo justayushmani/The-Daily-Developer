@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { Moon, Sun } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const TICKER_ITEMS = [
   'FLAWLESS EXECUTION: Bug-free deployments on the first try!',
@@ -75,7 +77,7 @@ function LiveDateTime() {
   );
 }
 
-export default function Header() {
+export default function Header({ theme = 'light', onToggleTheme = () => {} }) {
   return (
     <header>
       <Ticker />
@@ -90,7 +92,26 @@ export default function Header() {
           <span className="uppercase tracking-widest font-bold">
             Late Edition | Ghaziabad & Gorakhpur | ₹10
           </span>
-          <LiveDateTime />
+          <div className="flex items-center gap-2">
+            <LiveDateTime />
+            <button
+              type="button"
+              className="theme-toggle"
+              onClick={onToggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              <motion.span
+                key={theme}
+                initial={{ opacity: 0, rotate: -70, scale: 0.7 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+                className="flex"
+              >
+                {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+              </motion.span>
+            </button>
+          </div>
         </div>
       </div>
 

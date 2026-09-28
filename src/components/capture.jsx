@@ -1,12 +1,13 @@
 
-// Gallery of captured images in the same theme as the site
-const sampleImages = [
-	'/captures/WhatsApp Image 2026-04-19 at 3.36.34 PM (11).jpeg',
-	'/captures/WhatsApp Image 2026-04-19 at 3.36.34 PM (10).jpeg',
-	'/captures/WhatsApp Image 2026-04-19 at 3.36.34 PM (9).jpeg',
-	'/captures/WhatsApp Image 2026-04-19 at 3.36.34 PM (8).jpeg',
-	'/captures/WhatsApp Image 2026-04-19 at 3.36.34 PM (7).jpeg',
-	'/captures/WhatsApp Image 2026-04-19 at 3.36.34 PM (6).jpeg',
+import AccordionGallery from './Accordion Gallery';
+
+const captureItems = [
+	{ image: '/captures/WhatsApp Image 2026-04-19 at 3.36.34 PM (11).jpeg', label: 'Capture 01', alt: 'Captured moment 1' },
+	{ image: '/captures/WhatsApp Image 2026-04-19 at 3.36.34 PM (10).jpeg', label: 'Capture 02', alt: 'Captured moment 2' },
+	{ image: '/captures/WhatsApp Image 2026-04-19 at 3.36.34 PM (9).jpeg', label: 'Capture 03', alt: 'Captured moment 3' },
+	{ image: '/captures/WhatsApp Image 2026-04-19 at 3.36.34 PM (8).jpeg', label: 'Capture 04', alt: 'Captured moment 4' },
+	{ image: '/captures/WhatsApp Image 2026-04-19 at 3.36.34 PM (7).jpeg', label: 'Capture 05', alt: 'Captured moment 5' },
+	{ image: '/captures/WhatsApp Image 2026-04-19 at 3.36.34 PM (6).jpeg', label: 'Capture 06', alt: 'Captured moment 6' },
 ];
 
 export default function Capture() {
@@ -21,17 +22,27 @@ export default function Capture() {
 			<p className="text-sm text-gray-700 mb-4 font-bold">
 				A visual chronicle of moments captured through the lens.
 			</p>
-			<div className="flex flex-row overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-				{sampleImages.map((src, idx) => (
-					<div key={src} className="border-2 border-black rounded-lg overflow-hidden bg-white shadow-md flex items-center justify-center aspect-square min-w-64">
-						<img
-							src={src}
-							alt={`Capture ${idx + 1}`}
-							className="object-cover w-full h-full hover:scale-110 transition-transform duration-300"
-						/>
-					</div>
-				))}
-			</div>
+			<AccordionGallery
+				items={captureItems}
+				defaultIndex={2}
+				expandRatio={0.52}
+				trigger="hover"
+				accentColor="#ffffff"
+				overlayColor="#171817"
+				textColor="#ffffff"
+				grayscale={false}
+				inactiveDim={0.08}
+				showLabels
+				duration={0.6}
+				ease="power3.out"
+				parallax={0.5}
+				tilt={8}
+				stagger={0.06}
+				height={460}
+				gap={10}
+				radius={16}
+				orientation="horizontal"
+			/>
 		</section>
 	);
 }

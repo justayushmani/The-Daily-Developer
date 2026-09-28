@@ -17,22 +17,22 @@ export default function Sidebar() {
   return (
     <div className="flex flex-col gap-6">
       {/* The Wanted List */}
-      <div className="border-2 border-black">
-        <div className="bg-black text-white text-xs font-black uppercase tracking-widest px-3 py-1">
+      <div className="sidebar-panel">
+        <div className="sidebar-heading text-xs font-black uppercase tracking-widest px-3 py-1">
           The Wanted List
           <div className="font-normal normal-case tracking-normal text-gray-400">
             Opportunities & Leads
           </div>
         </div>
-        <ul className="divide-y divide-black">
+        <ul className="sidebar-list">
           {wantedItems.map(({ icon, label, onClick }) => (
             label === 'Resume' ? (
               <motion.a
                 key={label}
                 href="/resume.pdf"
                 download="Ayush_Resume.pdf"
-                className="flex items-center gap-2 px-3 py-2 text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white cursor-pointer transition-colors no-underline"
-                whileHover={{ scale: 1.05, backgroundColor: "#000", color: "#fff" }}
+                className="sidebar-item flex items-center gap-2 px-3 py-2 text-xs font-bold uppercase tracking-widest cursor-pointer transition-colors no-underline"
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -42,9 +42,9 @@ export default function Sidebar() {
             ) : (
               <motion.li
                 key={label}
-                className="flex items-center gap-2 px-3 py-2 text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white cursor-pointer transition-colors"
+                className="sidebar-item flex items-center gap-2 px-3 py-2 text-xs font-bold uppercase tracking-widest cursor-pointer transition-colors"
                 onClick={onClick || undefined}
-                whileHover={{ scale: 1.05, backgroundColor: "#000", color: "#fff" }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -57,14 +57,14 @@ export default function Sidebar() {
       </div>
 
       {/* Reward Card */}
-      <div className="border-2 border-black p-4 text-center">
+      <div className="sidebar-panel p-4 text-center">
         <p className="text-xs uppercase tracking-widest font-bold text-gray-500">Reward</p>
         <p className="text-xs mt-1 text-gray-600 leading-tight">
           For information leading to high-performance recruitment
         </p>
         <a
           href="#letters"
-          className="mt-3 inline-block bg-black text-white text-xs font-black uppercase tracking-widest px-4 py-2 hover:bg-red-600 transition-colors"
+          className="sidebar-action mt-3 inline-block text-xs font-black uppercase tracking-widest px-4 py-2 transition-colors"
         >
           Hire Ayush
         </a>
