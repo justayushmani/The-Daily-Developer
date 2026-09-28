@@ -58,7 +58,9 @@ const AccordionGallery = ({
       const panels = panelRefs.current;
       if (!panels.length) return;
 
-      const r = Math.min(Math.max(expandRatio, 0.2), 0.9);
+      const containerWidth = rootRef.current?.getBoundingClientRect().width ?? 0;
+      const layoutRatio = containerWidth <= 640 ? Math.min(expandRatio, 0.5) : expandRatio;
+      const r = Math.min(Math.max(layoutRatio, 0.2), 0.9);
       const grow = count > 1 ? (r * (count - 1)) / (1 - r) : 1;
       const mediaSize = mediaSizeRef.current;
 
@@ -182,7 +184,7 @@ const AccordionGallery = ({
   return (
     <div
       ref={rootRef}
-      className={`flex ${vertical ? 'flex-col' : 'flex-row'} w-full max-w-full [perspective:1400px] max-[520px]:!flex-col max-[520px]:[perspective:none] ${className}`}
+      className={`flex ${vertical ? 'flex-col' : 'flex-row'} w-full max-w-full [perspective:1400px] max-[640px]:!flex-col max-[640px]:!h-[72vh] max-[640px]:[perspective:none] ${className}`}
       style={{ gap: `${gap}px`, height: vertical ? `${Math.round(height * 1.6)}px` : `${height}px` }}
       role="list"
       aria-label="Image accordion gallery"
@@ -194,7 +196,7 @@ const AccordionGallery = ({
           <Tag
             key={i}
             ref={el => (panelRefs.current[i] = el)}
-            className="group relative block min-w-0 min-h-0 flex-[1_1_0] cursor-pointer overflow-hidden bg-[#0a0713] no-underline outline-none [transform-style:preserve-3d] [transform-origin:center] [box-shadow:0_10px_30px_-18px_rgba(0,0,0,0.8)] focus-visible:[box-shadow:0_0_0_2px_var(--ag-accent),0_10px_30px_-18px_rgba(0,0,0,0.8)] max-[520px]:min-h-[84px] max-[520px]:!transform-none"
+            className="group relative block min-w-0 min-h-0 flex-[1_1_0] cursor-pointer overflow-hidden bg-[#0a0713] no-underline outline-none [transform-style:preserve-3d] [transform-origin:center] [box-shadow:0_10px_30px_-18px_rgba(0,0,0,0.8)] focus-visible:[box-shadow:0_0_0_2px_var(--ag-accent),0_10px_30px_-18px_rgba(0,0,0,0.8)] max-[640px]:min-h-0 max-[640px]:!transform-none"
             style={{ borderRadius: `${radius}px`, '--ag-accent': accentColor, willChange: 'flex-grow, transform' }}
             href={item.link || undefined}
             onClick={e => handleClick(i, e)}
@@ -209,7 +211,7 @@ const AccordionGallery = ({
             <span className="absolute inset-0 overflow-hidden [border-radius:inherit]">
               <span
                 ref={el => (mediaRefs.current[i] = el)}
-                className="absolute top-1/2 left-1/2 [filter:grayscale(var(--ag-gray,1))]"
+                className="absolute top-1/2 left-1/2 [filter:grayscale(var(--ag-gray,1))] max-[640px]:!w-full"
                 style={{
                   width: vertical ? '100%' : 'var(--ag-media-size, 320px)',
                   height: vertical ? 'var(--ag-media-size, 320px)' : '100%',
