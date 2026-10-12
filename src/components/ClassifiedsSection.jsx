@@ -8,7 +8,6 @@ import {
   Binary,
   Sparkles,
   Cpu,
-  Boxes,
   Database,
   GitBranch,
 } from 'lucide-react';
